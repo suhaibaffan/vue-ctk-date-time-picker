@@ -18,7 +18,6 @@
       v-bind="$attrs"
       :value="value"
       :placeholder="label"
-      :style="[borderStyle]"
       type="text"
       class="field-input"
       :class="{ 'no-clear-button': noClearButton }"
@@ -75,12 +74,6 @@
       noClearButton: { type: Boolean, default: false }
     },
     computed: {
-      borderStyle () {
-        const cond = (this.isFocus && !this.errorHint)
-        return cond
-          ? { border: `1px solid ${this.color}` }
-          : null
-      },
       colorStyle () {
         const cond = this.isFocus
         return cond
@@ -116,9 +109,9 @@
         color: rgba(255, 255, 255, 0.70);
       }
       .field-input{
-        background-color: #424242;
-        border-color: rgba(255, 255, 255, 0.70);
-        color: rgba(255, 255, 255, 0.70);
+        background-color: #fff;
+        border: 1px solid #efefef;
+        color: #212529;
       }
       &.is-disabled {
         .field-label, .field-input {
@@ -146,15 +139,14 @@
       transition-duration: 0.3s;
       position: relative;
       width: 100%;
-      height: 42px;
+      height: 36px;
       min-height: 42px;
       padding-left: 12px;
       padding-right: 44px;
       font-weight: 400;
       -webkit-appearance: none;
       outline: none;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
+      border: 1px solid #efefef;
       font-size: 14px;
       z-index: 0;
       &.no-clear-button {
@@ -194,10 +186,10 @@
     }
     &.is-focused {
       .field-input {
-        border-color: dodgerblue;
+        border-color: #efefef;
       }
       .field-label {
-        color: dodgerblue;
+        color: #efefef;
       }
     }
     &.is-disabled {
