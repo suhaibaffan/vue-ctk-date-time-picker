@@ -167,9 +167,6 @@
         transform: translateY(0);
         font-size: 11px;
       }
-      .field-input {
-        padding-top: 14px;
-      }
     }
     &.has-value {
       .field-label {
