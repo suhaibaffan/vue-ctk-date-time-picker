@@ -41,7 +41,7 @@
       v-if="!hasClearButton"
       :color="dark ? '#757575' : 'rgba(0, 0, 0, 0.54)'"
       :dark="dark"
-      :hover="false"
+      :effect="false"      
       class="field-clear-button"
       @click="focusInput"
     >
@@ -55,7 +55,6 @@
       :dark="dark"
       class="field-clear-button"
       round
-      effect
       @click="$emit('clear')"
     >
       <span class="fs-16">
