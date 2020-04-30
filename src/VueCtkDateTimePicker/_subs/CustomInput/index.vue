@@ -169,10 +169,6 @@
       position: absolute;
       right: 12px;
     }
-    &-img {
-      width: 11px;
-      height: 7px;
-    }
     &.has-error {
       .field-input {
         border-color: orangered;
