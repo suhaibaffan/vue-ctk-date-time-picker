@@ -38,11 +38,24 @@
       {{ hint || label }}
     </label>
     <CustomButton
+      v-if="!hasClearButton"
+      :color="dark ? '#757575' : 'rgba(0, 0, 0, 0.54)'"
+      :dark="dark"
+      :hover="false"
+      class="field-clear-button"
+      @click="focusInput"
+    >
+      <span class="fs-16">
+        <img style="width:11px;height:7px;" src="./ico-down-arrow.svg" >
+      </span>
+    </CustomButton>
+    <CustomButton
       v-if="hasClearButton"
       :color="dark ? '#757575' : 'rgba(0, 0, 0, 0.54)'"
       :dark="dark"
       class="field-clear-button"
       round
+      effect
       @click="$emit('clear')"
     >
       <span class="fs-16">
@@ -156,6 +169,10 @@
     &-clear-button {
       position: absolute;
       right: 12px;
+    }
+    &-img {
+      width: 11px;
+      height: 7px;
     }
     &.has-error {
       .field-input {
