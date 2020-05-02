@@ -18,7 +18,7 @@
   >
     <span
       :style="[bgStyle]"
-      class="custom-button-effect"
+      :class="{'custom-button-effect': effect}"
     />
     <span
       class="custom-button-content flex align-center justify-content-center"
@@ -38,7 +38,8 @@
       withBorder: { type: Boolean, default: false },
       hover: { type: Boolean, default: false },
       selected: { type: Boolean, default: false },
-      round: { type: Boolean, default: false }
+      round: { type: Boolean, default: false },
+      effect: { type: Boolean, default: true }
     },
     computed: {
       colorStyle () {

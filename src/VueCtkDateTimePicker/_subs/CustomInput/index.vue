@@ -38,15 +38,18 @@
       {{ hint || label }}
     </label>
     <CustomButton
-      v-if="hasClearButton"
       :color="dark ? '#757575' : 'rgba(0, 0, 0, 0.54)'"
       :dark="dark"
+      :effect="hasClearButton"
       class="field-clear-button"
       round
-      @click="$emit('clear')"
+      @click="click"
     >
-      <span class="fs-16">
+      <span v-if="hasClearButton" class="fs-16">
         ✕
+      </span>
+      <span v-if="!hasClearButton" class="fs-16">
+        <img style="width:11px;height:7px;" src="./ico-down-arrow.svg">
       </span>
     </CustomButton>
   </div>
@@ -96,6 +99,13 @@
       focusInput () {
         this.$refs.CustomInput.focus()
         this.$emit('focus')
+      },
+      click () {
+        if (this.hasClearButton) {
+          this.$emit('clear')
+          return
+        }
+        this.focusInput()
       }
     }
   }
