@@ -98,7 +98,6 @@
           : null
       },
       hasClearButton () {
-        console.log(!this.noClearButton && !this.disabled && this.value)
         return !this.noClearButton && !this.disabled && this.value
       },
       /**
