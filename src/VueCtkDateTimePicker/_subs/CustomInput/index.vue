@@ -45,12 +45,24 @@
       round
       @click="click"
     >
-      <span v-if="hasClearButton" class="fs-16">
+      <span
+        v-if="hasClearButton"
+        class="fs-16"
+      >
         ✕
       </span>
       <span v-if="!hasClearButton">
-        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7">
-          <path fill="#A8A8A8" fill-rule="evenodd" d="M11 1.016l-.91-.971-4.697 5.024L.91.273 0 1.246l5.393 5.767z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="11"
+          height="7"
+          viewBox="0 0 11 7"
+        >
+          <path
+            fill="#A8A8A8"
+            fill-rule="evenodd"
+            d="M11 1.016l-.91-.971-4.697 5.024L.91.273 0 1.246l5.393 5.767z"
+          />
         </svg>
       </span>
     </CustomButton>
@@ -86,6 +98,7 @@
           : null
       },
       hasClearButton () {
+        console.log(!this.noClearButton && !this.disabled && this.value)
         return !this.noClearButton && !this.disabled && this.value
       },
       /**
