@@ -266,7 +266,8 @@
       },
       emitValue (payload) {
         const dateTime = this.range ? payload.value : this.getDateTime(payload)
-        this.$emit('input', dateTime)
+        console.log('Picker Container')
+        this.$emit('input', dateTime, 'PickersContainer')
         if (!this.range) {
           this.getTransitionName(dateTime)
         }

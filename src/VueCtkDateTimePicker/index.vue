@@ -174,7 +174,7 @@
             this.closePicker()
           }
           const newValue = this.range ? this.getRangeDateToSend(value) : this.getDateTimeToSend(value)
-          this.$emit('input', newValue)
+          this.$emit('input', newValue, 'Main')
           if (this.hasCustomElem && !this.noValueToCustomElem) {
             this.$nextTick(() => {
               this.setValueToCustomElem()
@@ -291,6 +291,7 @@
               shortcut: payload.value }
       },
       getDateTimeToSend (value) {
+        console.log('Main')
         const dateTime = typeof value !== 'undefined' ? value : this.value
         const dateToSend = dateTime
           ? moment(dateTime, 'YYYY-MM-DD HH:mm')
