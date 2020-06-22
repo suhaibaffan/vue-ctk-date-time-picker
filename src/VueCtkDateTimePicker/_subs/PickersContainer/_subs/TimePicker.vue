@@ -198,7 +198,7 @@
 
           if (!enabledHours.includes(this.hour) && this.behaviour && this.behaviour.time && this.behaviour.time.nearestIfDisabled) {
             this.hour = enabledHours[0] // eslint-disable-line
-            this.emitValue()
+            // this.emitValue() Removing this emit to fix min date issue
           }
 
           const _disabledHours = [...Array(24)]
@@ -244,7 +244,7 @@
 
           if (!enabledMinutes.includes(this.minute) && this.behaviour && this.behaviour.time && this.behaviour.time.nearestIfDisabled) {
             this.minute = enabledMinutes[0] // eslint-disable-line
-            this.emitValue()
+            // this.emitValue() Removing this emit to fix min date issue
           }
 
           return [...Array(60)]
