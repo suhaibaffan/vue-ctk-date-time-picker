@@ -39,7 +39,7 @@
       hover: { type: Boolean, default: false },
       selected: { type: Boolean, default: false },
       round: { type: Boolean, default: false },
-      effect: { type: String, default: '' }
+      effect: { type: Boolean, default: false }
     },
     computed: {
       colorStyle () {
