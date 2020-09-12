@@ -100,6 +100,7 @@
     }
     &:hover, &.is-hover {
       border: 1px solid transparent !important;
+      background-color: #cc33ff;
       .custom-button-effect {
         transform: scale(1);
         opacity: (.6);
@@ -113,6 +114,7 @@
     }
     &.is-selected {
       border: 1px solid transparent !important;
+      background-color: #ba22ff;
       .custom-button-effect {
         transform: scale(1);
         opacity: (1);
