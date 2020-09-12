@@ -86,7 +86,7 @@
           : null
       },
       hasClearButton () {
-        return !this.noClearButton && !this.disabled && this.value
+        return Boolean(!this.noClearButton && !this.disabled && this.value)
       },
       /**
        * Returns true if the field is disabled
