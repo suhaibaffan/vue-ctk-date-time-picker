@@ -86,7 +86,7 @@
           : null
       },
       hasClearButton () {
-        return Boolean(!this.noClearButton && !this.disabled && this.value)
+        return !this.noClearButton && !this.isDisabled && this.value
       },
       /**
        * Returns true if the field is disabled
@@ -168,6 +168,9 @@
     &-clear-button {
       position: absolute;
       right: 12px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto 0;
     }
     &.has-error {
       .field-input {
