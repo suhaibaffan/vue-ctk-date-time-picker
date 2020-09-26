@@ -234,10 +234,13 @@
         if (
           this.minDate &&
           time !== '00:00' &&
-          moment(this.date).isSame(moment(this.minDate, 'YYYY-MM-DD'))
+          moment(this.date).isSame(moment(this.minDate, 'YYYY-MM-DD') && !this.onlyTime )
         ) {
           return time
-        }
+        } else if ( this.onlyTime && this.minDate &&
+          time !== '00:00' ) {
+            return time
+          }
         return ''
       },
       maxTime () {
