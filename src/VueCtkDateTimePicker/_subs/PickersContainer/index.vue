@@ -234,7 +234,7 @@
         if (
           this.minDate &&
           time !== '00:00' &&
-          moment(this.date).isSame(moment(this.minDate, 'YYYY-MM-DD') && !this.onlyTime )
+          moment(this.date).isSame(moment(this.minDate, 'YYYY-MM-DD') )
         ) {
           return time
         } else if ( this.onlyTime && this.minDate &&
